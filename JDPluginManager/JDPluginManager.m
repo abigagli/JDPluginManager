@@ -83,10 +83,18 @@
         [installItem setTarget:self];
         [[pluginsMenuItem submenu] addItem:installItem];
         
-        // update item
-        NSMenuItem *pluginItem = [[[NSMenuItem alloc] initWithTitle:JDLocalize(@"keyUpdateMenuItemTitle") action:@selector(updatePlugin:) keyEquivalent:@""] autorelease];
-        [pluginItem setTarget:self];
-        [[pluginsMenuItem submenu] addItem:pluginItem];
+        // browse item
+        NSMenuItem *browseItem = [[[NSMenuItem alloc] initWithTitle:JDLocalize(@"keyBrowsePluginsMenuItemTitle") action:@selector(browsePlugins:) keyEquivalent:@""] autorelease];
+        [browseItem setTarget:self];
+        [[pluginsMenuItem submenu] addItem:browseItem];
+		
+        // separator
+		[[pluginsMenuItem submenu] addItem:[NSMenuItem separatorItem]];
+        
+        // about item
+        NSMenuItem *aboutItem = [[[NSMenuItem alloc] initWithTitle:JDLocalize(@"keyAboutMenuItemTitle") action:@selector(showAboutScreen:) keyEquivalent:@""] autorelease];
+        [aboutItem setTarget:self];
+        [[pluginsMenuItem submenu] addItem:aboutItem];
     }
 }
 
@@ -140,9 +148,20 @@
     [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:@[url]];
 }
 
-- (void)updatePlugin:(NSMenuItem*)sender;
+- (void)browsePlugins:(NSMenuItem*)sender;
 {
-    [[[[JDPluginInstaller alloc] init] autorelease] beginInstallWithRepositoryUrl:@"git@github.com:jaydee3/JDPluginManager.git" searchInSubdirectories:NO];
+//    show a list of known plugins
+}
+
+- (void)showAboutScreen:(NSMenuItem*)sender;
+{
+//    show about screen
+    
+//    // update JDPluginManager
+//    [[[[JDPluginInstaller alloc] init] autorelease] beginInstallWithRepositoryUrl:@"git@github.com:jaydee3/JDPluginManager.git" searchInSubdirectories:NO];
+//    
+//    // openGithub
+//    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/jaydee3/JDPluginManager"]];
 }
 
 - (void)deletePlugin:(NSMenuItem*)sender;

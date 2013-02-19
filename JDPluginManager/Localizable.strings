@@ -16,7 +16,8 @@
 "keyEmptyMenuItemTitle"         = "- No installed Plugins -";
 "keyShowDirectoryMenuItemTitle" = "Reveal plugin directory";
 "keyInstallMenuItemTitle"       = "Install a new plugin…";
-"keyUpdateMenuItemTitle"        = "Update JDPluginManager";
+"keyBrowsePluginsMenuItemTitle" = "Browse available Xcode Plugins";
+"keyAboutMenuItemTitle"         = "About JDPluginManager";
 
 // uninstalling
 "keyUninstall" = "Uninstall";
